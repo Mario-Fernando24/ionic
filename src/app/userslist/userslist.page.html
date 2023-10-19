@@ -9,31 +9,32 @@
 
 <ion-content>
 
-  <ion-list>
-    <ion-item *ngFor="let characters of characters">
+  <ion-grid>
 
-      <ion-card class="card-ionic">
-
-        
-        <img class="image-container" alt="Silhouette of mountains" src="{{ characters['image'] }}" />
-        <ion-card-header>
-          <ion-row class="ionic-row">
-            <ion-card-title>{{ characters['name'] }}</ion-card-title>
-            <ion-icon [name]="characters['status']=='Alive' ? 'heart-sharp' : 'heart-dislike'"  size='large'></ion-icon>
-
-            <ion-icon [name]="characters['gender']=='Male' ? 'male' : 'male-female'"  size='large'></ion-icon>
-          </ion-row>
-          <ion-card-subtitle>{{ characters['species'] }}</ion-card-subtitle>
-        </ion-card-header>
-        <!-- <ion-icon name='male-female' size='large'></ion-icon> <div [class]="condicion ? 'clase-css-verdadera' : 'clase-css-falsa'">
-        <ion-icon name='male' size='large'></ion-icon> -->
-
-        <ion-card-content>
+    <ion-col sizeMd="4" offsetMd="4">
+      <ion-list>
+        <ion-item *ngFor="let characters of characters">
+          <ion-card class="card-ionic">
+            <img class="image-container" alt="Silhouette of mountains" src="{{ characters['image'] }}" />
+            <ion-card-header>
+              <ion-row class="ionic-row">
+                <ion-card-title>{{ characters['name'] }}</ion-card-title>
+                <ion-icon [name]="characters['status']=='Alive' ? 'heart-sharp' : 'heart-dislike'"
+                  size='large'></ion-icon>
+                <ion-icon [name]="characters['gender']=='Male' ? 'male' : 'male-female'" size='large'></ion-icon>
+              </ion-row>
+              <ion-card-subtitle>{{ characters['origin']['name'] }}</ion-card-subtitle>
+            </ion-card-header>
+            <!-- <ion-icon name='male-female' size='large'></ion-icon> <div [class]="condicion ? 'clase-css-verdadera' : 'clase-css-falsa'">
+            <ion-icon name='male' size='large'></ion-icon> -->
+            <!-- <ion-card-content>
           Here'
-        </ion-card-content>
-      </ion-card>
+        </ion-card-content> -->
+          </ion-card>
 
-    </ion-item>
-  </ion-list>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-grid>
 
 </ion-content>
